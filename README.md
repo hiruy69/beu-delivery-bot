@@ -1,6 +1,6 @@
-#Welcome to Beu Delivery Bot 
+# Welcome to Beu Delivery Bot 
 
-steps to use the bot 
+# # steps to use the bot 
 
 1, start the bot 
 2, choose an action(view foods | register as vendor)
