@@ -1,7 +1,8 @@
 # Welcome to Beu Delivery Bot 
 
-# # steps to use the bot 
+## steps to use the bot 
 
+```sh
 1, start the bot 
 2, choose an action(view foods | register as vendor)
 3,if you want to send order to the default vendor click view foods and add order to the default foods 
@@ -11,4 +12,5 @@
 5, use another telegram account or the same to order the newly added order 
 6, use the manage order button to view and handle all you orders like ( incoming ,pending ,completed ,canceled)
 
-that's all thanks !!!!!
+thats all thanks !!!!!
+```
