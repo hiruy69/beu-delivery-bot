@@ -169,7 +169,7 @@ async def custom_choice(update: Update, context: ContextTypes.DEFAULT_TYPE) -> N
     context.user_data['order_id'] = update.callback_query.data.replace('order_', '')
 
     food = [ food for food in foods if food.id == context.user_data['food_id'] ][0]
-    user = User(username=update.effective_user.full_name, phone="09123456789")            
+    user = User(username=update.effective_user.full_name, phone="09123456789",chat_id=update.effective_user.id)            
     order = Order(quantity=1, food=food, user=user)
     button = [
                 [InlineKeyboardButton(f"Accept", callback_data=f'order_{order.id}'),InlineKeyboardButton("Cancel", callback_data=f'cancel_{order.id}') ] 
@@ -198,9 +198,11 @@ async def update_orders(update: Update, context: ContextTypes.DEFAULT_TYPE) -> N
     if order_status == "order" and order_.status == Status.INCOMING:
         order_.status = Status.PENDING
         text = f"Order id: {order_.id} Accepted ✅"
+        await context.bot.send_message(chat_id=order_.user.chat_id, text=f"{order_.user.username} your Order has been Accepted ✅" )
     elif order_status == "cancel" and order_.status != Status.COMPLETED:
         order_.status = Status.CANCELLED
         text = f"Order id: {order_.id}  Cancelled ❌"
+        await context.bot.send_message(chat_id=order_.user.chat_id, text=f"Sorry {order_.user.username} your Order has been Cancelled ❌" )
     elif order_status == "complete" and order_.status != Status.CANCELLED:
         order_.status = Status.COMPLETED
         text = f"Order id: {order_.id} Completed ✅"

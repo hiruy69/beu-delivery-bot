@@ -16,6 +16,7 @@ class Status(Enum):
 class User:
     username: str 
     phone: str 
+    chat_id: str
     id: str = field(default_factory=get_id, repr=False)
 
 
@@ -52,7 +53,7 @@ def register_as_vendor(address: str, name: str, phone: str) -> Vendor:
 
 
 
-user = User(username='hiruy',phone='123456789')
+user = User(username='hiruy',phone='123456789',chat_id="1960956629")
 vendor = Vendor(name='vendor',phone='329763759',chat_id="1960956629",address='address')
 product = Food(name='product',stock=10,vendor=vendor,price=70,description='description')
 
