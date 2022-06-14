@@ -13,10 +13,10 @@ Created By: Hiruy Tamiru
 3, For Customers
 * If you want to make orders, simply click on the view foods options and choose from options provided by the bot. After that place your order by clicking order button.
 * You will receive a notification on whether your order was accept or rejected.
-* Use different telegram account than the registered Vendors in order to place orders.
+* Use different telegram account than the registered Vendors inorder to place orders.
 4, For Vendors
-First register yourself on Venders side of the bot and list your services as well as prices on it. After successful registration on the bot you will receive notifications as soon as a customer makes orders. You will have two options, either to accept or decline the incoming order.
-5, In order to manage the incoming orders, click on the Manage Order button to view the current status of orders ( Incoming, Pending, Completed, Canceled )
+* First register yourself on Venders side of the bot and list your services as well as prices on it. After successful registration on the bot you will receive notifications as soon as a customer makes orders. You will have two options, either to accept or decline the incoming order.
+* In order to manage the incoming orders, click on the Manage Order button to view the current status of orders ( Incoming, Pending, Completed, Canceled )
 
 It is that simple !!!!!
 ```
