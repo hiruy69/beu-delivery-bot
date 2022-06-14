@@ -93,25 +93,25 @@ async def manage_orders(update: Update, context: ContextTypes.DEFAULT_TYPE) -> N
                 ["View Incoming Orders", "View Pending Orders"],["View Completed Orders","View Cancelled Orders"] ,["Back"]
             ]
     if (action == "View Pending Orders"):
-        orders = [ order for order in Orders if order.status == Status.PENDING and order.vendor.chat_id == update.effective_message.chat_id ]
+        orders = [ order for order in Orders if order.status == Status.PENDING and order.food.vendor.chat_id == update.effective_message.chat_id ]
         if orders :
             await send_orders(update,orders)
         else:
             await update.message.reply_text("No pending orders")
     elif (action == "View Incoming Orders"):
-        orders = [ order for order in Orders if order.status == Status.INCOMING and order.vendor.chat_id == update.effective_message.chat_id ]
+        orders = [ order for order in Orders if order.status == Status.INCOMING and order.food.vendor.chat_id == update.effective_message.chat_id ]
         if orders:
             await send_orders(update,orders)
         else :
             await update.message.reply_text("No incoming orders")
     elif (action == "View Completed Orders"):
-        orders = [ order for order in Orders if order.status == Status.COMPLETED and order.vendor.chat_id == update.effective_message.chat_id ]
+        orders = [ order for order in Orders if order.status == Status.COMPLETED and order.food.vendor.chat_id == update.effective_message.chat_id ]
         if orders:
             await send_orders(update,orders)
         else :
             await update.message.reply_text("No completed orders")
     elif (action == "View Cancelled Orders"):
-        orders = [ order for order in Orders if order.status == Status.CANCELLED  and order.vendor.chat_id == update.effective_message.chat_id ]
+        orders = [ order for order in Orders if order.status == Status.CANCELLED  and order.food.vendor.chat_id == update.effective_message.chat_id ]
         if orders:
             await send_orders(update,orders)
         else :
